@@ -12,7 +12,7 @@ $result = $telegram -> getWebhookUpdates();
 $text = $result["message"]["text"];
 //Уник.идентификатор пользователя
 $chat_id = getMessage()->getChat()->getId();
-
+print_r($chat_id);
 //$chat_id = $result["message"]["chat"]["id"];
 $img = $result["message"]["photo"];
 $name = $result["message"]["from"]["username"];
