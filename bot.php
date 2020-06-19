@@ -24,6 +24,12 @@ if (!empty($result['message']['text'])) {
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply, 'reply_markup' => $reply_markup ]);
  
 		unset($text);	
-	} 
+    } 
+    if (mb_stripos($text, 'Выложить слот') !== false) {
+        $reply = "Введите название вашего лота";
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
+        unset($text);	
+
+    }
 }
 
