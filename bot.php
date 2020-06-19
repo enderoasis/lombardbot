@@ -30,6 +30,8 @@ if($text){
     $reply = "Введите название слота";
     // Название слота
     $title = $result["message"]["text"];
+    $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $title ]);
+
     $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
     // Закрепление изображения
     if(isset($title)) {
