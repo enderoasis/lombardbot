@@ -29,10 +29,10 @@ if($text){
     }elseif ($text == "Выложить слот") {
     $reply = "Введите название слота";
     // Название слота
-    $title = $result["message"]["text"];
-    $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $title ]);
+    //$title = $result["message"]["text"];
+    $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
 
-    $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => 'test' ]);
+   // $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => 'test' ]);
     // Закрепление изображения
     if(isset($title)) {
         $reply = "Закрепите фотографию слота";
