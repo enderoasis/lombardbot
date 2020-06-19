@@ -28,7 +28,7 @@ if (!empty($result['message']['text'])) {
     if (mb_stripos($text, 'Выложить слот') !== false) {
         $reply = "Введите название вашего лота";
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
-        unset($text);	
+        header("HTTP/1.1 200 OK");	
         if ($text) {
             $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => 'ok' ]);
 
