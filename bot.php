@@ -29,7 +29,10 @@ if (!empty($result['message']['text'])) {
         $reply = "Введите название вашего лота";
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         unset($text);	
+        if ($text) {
+            $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => 'ok' ]);
 
+        }   
     }
 }
 
