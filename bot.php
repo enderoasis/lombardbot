@@ -23,7 +23,7 @@ if (!empty($result['message']['text'])) {
 	if (mb_stripos($text, '/start') !== false) {
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply, 'reply_markup' => $reply_markup ]);
  
-		exit();	
+		unset($text);	
 	} 
 }
 
