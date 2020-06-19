@@ -32,7 +32,7 @@ if($text){
     $title = $result["message"]["text"];
     $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $title ]);
 
-    $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
+    $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => 'test' ]);
     // Закрепление изображения
     if(isset($title)) {
         $reply = "Закрепите фотографию слота";
