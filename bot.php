@@ -43,5 +43,18 @@ if (!empty($result['message']['text'])) {
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         header("HTTP/1.1 200 OK");	
     }
+    if  ($text) {
+        $desc = $text;
+        unset($text);
+        $reply = "Отправьте фотографию предмета на залог"; 
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
+        header("HTTP/1.1 200 OK");	
+        $file_id = $result[count($result) - 1]['file_id'];
+        $response = $telegram->getFile(['file_id' => $file_id]);
+        $linktoimg = $response['file_path'];
+        $url = 'https://api.telegram.org/file/bot' . $tkn . '/' . $linktoimg . '';
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $url ]);
+        header("HTTP/1.1 200 OK");	
+    }
 }
 
