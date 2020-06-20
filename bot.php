@@ -39,8 +39,8 @@ if (!empty($result['message']['text'])) {
     if  ($text) {
         $array = array();
         array_push($array, $text);
-        unset($text);
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $array ]);
+        unset($text);
 
        
     }
