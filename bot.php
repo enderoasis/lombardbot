@@ -14,15 +14,22 @@ $text = $result["message"]["text"];
 
 $chat_id = $result["message"]["chat"]["id"];
 $img = $result["message"]["photo"];
-$name = $result["message"]["from"]["username"];
-$keyboard = [['text'=> "Укажите контактные данные",'request_contact'=> true],["Выложить слот"],["Для ломбардов"],["Мой лот"]];
+$userid = $result["message"]["from"]["id"];
+$username = $result["message"]["from"]["username"];
+$surname = $result["message"]["from"]["last_name"];
+$name = $result["message"]["from"]["first_name"];
+
+$keyboard = [["Выложить слот"],["Для ломбардов"],["Мой лот"]];
 
 if (!empty($result['message']['text'])) {
     $reply = "Добро пожаловать в бота!";
     $reply_markup = $telegram->replyKeyboardMarkup([ 'keyboard' => $keyboard, 'resize_keyboard' => true, 'one_time_keyboard' => false ]);
 	if (mb_stripos($text, '/start') !== false) {
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply, 'reply_markup' => $reply_markup ]);
- 
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $userid ]);
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $name ]);
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $surname ]);
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $username ]);
 		unset($text);	
     } 
     if (mb_stripos($text, 'Выложить слот') !== false) {
