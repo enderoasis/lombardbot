@@ -31,13 +31,15 @@ if (!empty($result['message']['text'])) {
 		unset($text);	
     } 
     if (mb_stripos($text, 'Выложить слот') !== false) {
+        $array = array();
+        array_push($array, $text);
         $reply = "Введите категорию и название вашего лота.\n Примеры: \n  Техника.Смартфон iPhone X\n  Драгметалл.Золото 375 пробы\n  Изделия. Кольцо с бриллиантом\n  Меха.Норковая шуба\n  Авто. BMW X5";
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         header("HTTP/1.1 200 OK");	
         unset($text);
+
     }
-    if  ($text) {
-        $array = array();
+    if  ($array) {
         array_push($array, $text);
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $array ]);
         unset($text);
