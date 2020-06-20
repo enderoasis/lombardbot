@@ -26,7 +26,8 @@ if (!empty($result['message']['text'])) {
     $reply_markup = $telegram->replyKeyboardMarkup([ 'keyboard' => $keyboard, 'resize_keyboard' => true, 'one_time_keyboard' => false ]);
 	if (mb_stripos($text, '/start') !== false) {
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply, 'reply_markup' => $reply_markup ]);
-     
+        header("HTTP/1.1 200 OK");	
+
 		unset($text);	
     } 
     if (mb_stripos($text, 'Выложить слот') !== false) {
