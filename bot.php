@@ -31,5 +31,9 @@ if (!empty($result['message']['text'])) {
         header("HTTP/1.1 200 OK");	
         
     }
+    if  ($text) {
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
+        header("HTTP/1.1 200 OK");	
+    }
 }
 
