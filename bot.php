@@ -37,6 +37,8 @@ if (!empty($result['message']['text'])) {
         unset($text);
     }
     if  ($text) {
+        $array = array();
+        array_push($array, $text);
         $tittle = $text;
         $reply = "Введите описание. \n Примеры: \n Смартфон, приобритен в 2019 году, документы имеются и.т.д"; 
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
