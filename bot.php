@@ -32,7 +32,7 @@ if (!empty($result['message']['text'])) {
         
     }
     if  ($text) {
-        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $text ]);
         header("HTTP/1.1 200 OK");	
     }
 }
