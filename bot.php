@@ -15,8 +15,7 @@ $text = $result["message"]["text"];
 $chat_id = $result["message"]["chat"]["id"];
 $img = $result["message"]["photo"];
 $name = $result["message"]["from"]["username"];
-$keyboard = ['text'=>"Для связи с вами",
-'request_contact'=>true,["Выложить слот"],["Для ломбардов"],["Мой лот"]];
+$keyboard = [['text'=> "Укажите контактные данные",'request_contact'=> true],["Выложить слот"],["Для ломбардов"],["Мой лот"]];
 
 if (!empty($result['message']['text'])) {
     $reply = "Добро пожаловать в бота!";
