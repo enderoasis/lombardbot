@@ -31,7 +31,7 @@ if (!empty($result['message']['text'])) {
 		unset($text);	
     } 
     if (mb_stripos($text, 'Выложить слот') !== false) {
-        $reply = "Введите категорию и название вашего лота.\n Примеры: \n 1) Техника.Смартфон iPhone X\n 2) Драгметалл.Золото 375 пробы\n 3) Изделия. Кольцо с бриллиантом\n 4) Меха.Норковая шуба\n 5) Авто. BMW X5";
+        $reply = "Введите категорию и название вашего лота.\n Примеры: \n  Техника.Смартфон iPhone X\n  Драгметалл.Золото 375 пробы\n  Изделия. Кольцо с бриллиантом\n  Меха.Норковая шуба\n  Авто. BMW X5";
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         header("HTTP/1.1 200 OK");	
         unset($text);
@@ -39,8 +39,9 @@ if (!empty($result['message']['text'])) {
     if  ($text) {
         $tittle = $text;
         unset($text);
-        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $tittle ]);
-
+        $reply = "Введите описание. \n Примеры: \n Смартфон, приобритен в 2019 году, документы имеются и.т.д"; 
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
+        header("HTTP/1.1 200 OK");	
     }
 }
 
