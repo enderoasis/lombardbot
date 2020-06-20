@@ -1,4 +1,5 @@
 <?php
+include('config.php');
 include('vendor/autoload.php'); //Подключаем библиотеку
 use Telegram\Bot\Api; 
 
@@ -15,7 +16,6 @@ $text = $result["message"]["text"];
 $chat_id = $result["message"]["chat"]["id"];
 $img = $result["message"]["photo"];
 $userid = $result["message"]["from"]["id"];
-$username = $result["message"]["from"]["username"];
 $surname = $result["message"]["from"]["last_name"];
 $name = $result["message"]["from"]["first_name"];
 
@@ -36,8 +36,10 @@ if (!empty($result['message']['text'])) {
         unset($text);
     }
     if  ($text) {
-        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $text ]);
-        header("HTTP/1.1 200 OK");	
+        $tittle = $text;
+        unset($text);
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $tittle ]);
+
     }
 }
 
