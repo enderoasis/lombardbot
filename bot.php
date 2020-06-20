@@ -38,14 +38,13 @@ if (!empty($result['message']['text'])) {
     }
     if  ($text) {
         $tittle = $text;
-        unset($text);
         $reply = "Введите описание. \n Примеры: \n Смартфон, приобритен в 2019 году, документы имеются и.т.д"; 
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         header("HTTP/1.1 200 OK");	
+        unset($text);
     }
     if  ($text) {
         $desc = $text;
-        unset($text);
         $reply = "Отправьте фотографию предмета на залог"; 
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         header("HTTP/1.1 200 OK");	
@@ -54,7 +53,8 @@ if (!empty($result['message']['text'])) {
         $linktoimg = $response['file_path'];
         $url = 'https://api.telegram.org/file/bot' . $tkn . '/' . $linktoimg . '';
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $url ]);
-        header("HTTP/1.1 200 OK");	
+        header("HTTP/1.1 200 OK");
+        unset($text);	
     }
 }
 
