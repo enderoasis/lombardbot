@@ -40,11 +40,9 @@ if (!empty($result['message']['text'])) {
         $array = array();
         array_push($array, $text);
         unset($text);
-
-        $reply = "Введите описание. \n Примеры: \n Смартфон, приобритен в 2019 году, документы имеются и.т.д"; 
-        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $array ]);
-        header("HTTP/1.1 200 OK");	
+
+       
     }
     if  ($text) {
         array_push($array, $text);
