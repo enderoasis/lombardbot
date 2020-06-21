@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita3221a8039d621bffbfa58bc29cf9941
+class ComposerStaticInit43f660f4dd67d61897e1876772b6bbe5
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -12,17 +12,11 @@ class ComposerStaticInita3221a8039d621bffbfa58bc29cf9941
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
-        array (
-            'Telegram\\Bot\\' => 13,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -31,12 +25,12 @@ class ComposerStaticInita3221a8039d621bffbfa58bc29cf9941
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
         ),
-        'I' => 
+        'L' => 
         array (
-            'Illuminate\\Support\\' => 19,
-            'Illuminate\\Contracts\\' => 21,
+            'Longman\\TelegramBot\\' => 20,
         ),
         'G' => 
         array (
@@ -44,18 +38,9 @@ class ComposerStaticInita3221a8039d621bffbfa58bc29cf9941
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'D' => 
-        array (
-            'Doctrine\\Inflector\\' => 19,
-            'Doctrine\\Common\\Inflector\\' => 26,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Telegram\\Bot\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/irazasyed/telegram-bot-sdk/src',
-        ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
@@ -68,17 +53,17 @@ class ComposerStaticInita3221a8039d621bffbfa58bc29cf9941
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Illuminate\\Support\\' => 
+        'Longman\\TelegramBot\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/support',
-        ),
-        'Illuminate\\Contracts\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/illuminate/contracts',
+            0 => __DIR__ . '/..' . '/longman/telegram-bot/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -92,21 +77,13 @@ class ComposerStaticInita3221a8039d621bffbfa58bc29cf9941
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Doctrine\\Inflector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
-        ),
-        'Doctrine\\Common\\Inflector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
-        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita3221a8039d621bffbfa58bc29cf9941::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita3221a8039d621bffbfa58bc29cf9941::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit43f660f4dd67d61897e1876772b6bbe5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit43f660f4dd67d61897e1876772b6bbe5::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
