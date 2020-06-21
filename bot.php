@@ -56,6 +56,7 @@ if (!empty($result['message']['text'])) {
         $linktoimg = $response['file_path'];
         $url = 'https://api.telegram.org/file/bot' . $tkn . '/' . $linktoimg . '';
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $url ]);
+        var_dump($url);
         header("HTTP/1.1 200 OK");
         array_push($array, $url);
     }
