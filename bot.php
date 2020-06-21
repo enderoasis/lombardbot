@@ -60,5 +60,10 @@ if (!empty($result['message']['text'])) {
         header("HTTP/1.1 200 OK");
         array_push($array, $url);
     }
+    else {
+        $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => 'there is NO img' ]);
+        
+        header("HTTP/1.1 200 OK");
+    }
 }
 
