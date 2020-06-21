@@ -11,6 +11,8 @@ $mysql_credentials = [
    'password' => 'S^r07si0',
    'database' => 'lombardb_storage',
 ];
+use Longman\TelegramBot\Telegram;
+use Longman\TelegramBot\TelegramLog;
 
 try {
     // Create Telegram API object
@@ -18,10 +20,13 @@ try {
 
     // Enable MySQL
     $telegram->enableMySql($mysql_credentials);
+    $telegram->addCommandsPath(__DIR__ . "/commands");
+	TelegramLog::initUpdateLog($bot_username . '_update.log');
 
     // Handle telegram getUpdates request
     $telegram->handleGetUpdates();
 } catch (Longman\TelegramBot\Exception\TelegramException $e) {
     // log telegram errors
     // echo $e->getMessage();
+
 }
