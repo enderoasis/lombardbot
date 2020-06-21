@@ -31,7 +31,6 @@ if (!empty($result['message']['text'])) {
 		unset($text);	
     } 
     if (mb_stripos($text, 'Выложить слот') !== false) {
-        unset($text);
         $stage = "f";
         $reply = "Введите категорию и название вашего лота.\n Примеры: \n  Техника.Смартфон iPhone X\n  Драгметалл.Золото 375 пробы\n  Изделия. Кольцо с бриллиантом\n  Меха.Норковая шуба\n  Авто. BMW X5";
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
@@ -39,25 +38,26 @@ if (!empty($result['message']['text'])) {
         
 
     }
-    if  ($text) {
+    if  ($result["message"]["text"]) {
         $array = array();
-        array_push($array, $text);
-        unset($text);
-
-       
-    }
-    if  ($text) {
         array_push($array, $text);
         $reply = "Отправьте фотографию предмета на залог"; 
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $reply ]);
         header("HTTP/1.1 200 OK");	
+       // unset($text);
+
+       
+    }
+    if  ($img) {
+        
+   
         $file_id = $result[count($result) - 1]['file_id'];
         $response = $telegram->getFile(['file_id' => $file_id]);
         $linktoimg = $response['file_path'];
         $url = 'https://api.telegram.org/file/bot' . $tkn . '/' . $linktoimg . '';
         $telegram->sendMessage([ 'chat_id' => $chat_id, 'text' => $url ]);
         header("HTTP/1.1 200 OK");
-        unset($text);	
+        array_push($array, $url);
     }
 }
 
