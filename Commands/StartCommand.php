@@ -65,10 +65,11 @@ class StartCommand extends UserCommand
             'text'         => 'Добро пожаловать! Вам доступны следующие действия:',
             'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбарда']),
         ];
+        return Request::sendMessage($data);
+
             if ($text === '') {
                 $data['text'] = 'Добро пожаловать! Вам доступны следующие действия:';
                 
-                $result = Request::sendMessage($data);
             }
             elseif ($text === 'Выложить слот') {
                 return (new SurveyCommand($this->telegram, new Update($update)))->preExecute();
