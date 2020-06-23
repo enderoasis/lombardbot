@@ -8,9 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Longman\TelegramBot\Commands\SystemCommands;
+namespace Longman\TelegramBot\Commands\UserCommands;
+use Longman\TelegramBot\Entities\Keyboard;
+use Longman\TelegramBot\Entities\Update;
+use Longman\TelegramBot\Commands\UserCommands\SurveyCommand;
 
-use Longman\TelegramBot\Commands\SystemCommand;
+use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Request;
 
 /**
@@ -18,7 +21,7 @@ use Longman\TelegramBot\Request;
  *
  * Gets executed when a user first starts using the bot.
  */
-class StartCommand extends SystemCommand
+class StartCommand extends UserCommand
 {
     /**
      * @var string
