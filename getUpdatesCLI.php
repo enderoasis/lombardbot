@@ -20,7 +20,6 @@ try {
 
     // Enable MySQL
     $telegram->enableMySql($mysql_credentials);
-	TelegramLog::initUpdateLog($bot_username . '_update.log');
 
     // Handle telegram getUpdates request
     $telegram->handleGetUpdates();
