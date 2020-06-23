@@ -111,7 +111,7 @@ class SurveyCommand extends UserCommand
         //Every time a step is achieved the track is updated
         switch ($state) {
             case 0:
-                if ($text === 'Выложить слот') {
+                if ($text === 'Выложить слот') { 
                     $notes['state'] = 0;
                     $this->conversation->update();
 
