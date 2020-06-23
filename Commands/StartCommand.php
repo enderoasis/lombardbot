@@ -66,13 +66,12 @@ class StartCommand extends UserCommand
             'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбарда']),
         ];
             if ($text === '') {
-                $data['text']         = 'Добро пожаловать! Вам доступны следующие действия:';
+                $data['text'] = 'Добро пожаловать! Вам доступны следующие действия:';
                 
                 $result = Request::sendMessage($data);
             }
             elseif ($text === 'Выложить слот') {
-             $update['message']['text'] = '/survey';
-            return (new SurveyCommand($this->telegram, new Update($update)))->preExecute();
+            return (new SurveyCommand());
             }
 
      
