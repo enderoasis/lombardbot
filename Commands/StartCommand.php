@@ -53,16 +53,15 @@ class StartCommand extends SystemCommand
      */
     public function execute()
     {
-        $message = $this->getMessage();
+        $text = trim($this->getMessage()->getText(true));
 
-        $chat_id = $message->getChat()->getId();
-        $user_id = $user->getId();
-        $keyboards = [];
-        $keyboards[] = new Keyboard(
-                ['Выложить слот'],
-                ['Кабинет ломбарда'],
-                ['Мой слот']
-            );
+        $update = json_decode($this->update->toJson(), true);
+
+        $data = [
+            'chat_id'      => $this->getMessage()->getChat()->getId(),
+            'text'         => 'Choose something',
+            'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбарда']),
+        ];
             if ($text === '') {
                 $data['text']         = 'Добро пожаловать! Вам доступны следующие действия:';
                 
@@ -70,9 +69,8 @@ class StartCommand extends SystemCommand
                 $result = Request::sendMessage($data);
             }
             elseif ($text === 'Выложить слот') {
-              $this->telegram->executeCommand("/survey");
-              //  $data['text'] = file_get_contents(__DIR__ . '/../../other/texts/infrormation.txt');
-            //    $result = Request::sendMessage($data);
+             $update['message']['text'] = '/help';
+            return (new SurveyCommand($this->telegram, new Update($update)))->preExecute();
             }
 
      
