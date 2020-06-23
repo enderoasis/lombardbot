@@ -57,11 +57,13 @@ class StartCommand extends SystemCommand
         $message = $this->getMessage();
 
         $chat_id = $message->getChat()->getId();
-        $keyboard = [["Выложить лот"],["Для ломбардов"],["Мой лот"]]; //Клавиатура
-        $reply_markup = $telegram->replyKeyboardMarkup([ 'keyboard' => $keyboard, 'resize_keyboard' => true, 'one_time_keyboard' => false ]);
+        $data['reply_markup'] = (new Keyboard(['Выложить лот', 'Для ломбардов','Мой лот']))
+        ->setResizeKeyboard(true)
+        ->setOneTimeKeyboard(true)
+        ->setSelective(true);
         $data = [
             'chat_id' => $chat_id,
-            'text'    => $reply_markup,
+            'text'    => $data['reply_markup'],
         ];
 
         return Request::sendMessage($data);
