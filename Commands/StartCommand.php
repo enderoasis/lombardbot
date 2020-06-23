@@ -71,7 +71,7 @@ class StartCommand extends UserCommand
                 $result = Request::sendMessage($data);
             }
             elseif ($text === 'Выложить слот') {
-             $update['message']['text'] = '/help';
+                unset($text);
             return (new SurveyCommand($this->telegram, new Update($update)))->preExecute();
             }
 
