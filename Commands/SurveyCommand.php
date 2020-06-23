@@ -69,7 +69,14 @@ class SurveyCommand extends UserCommand
      */
     public function execute()
     {
-
+        $mysql_credentials = [
+            'host'     => 'srv-db-plesk01.ps.kz',
+            'port'     => 3306, // optional
+            'user'     => 'lombardb_didar',
+            'password' => '7likC9~2',
+            'database' => 'lombardb_telegrambot',
+         ];
+         $telegram->enableMySql($mysql_credentials);
 
         $message = $this->getMessage();
 
