@@ -181,7 +181,7 @@ class SurveyCommand extends UserCommand
                 $this->conversation->update();
 
                 $data['reply_markup'] = (new Keyboard(
-                    (new KeyboardButton('Оставьте ваши контактные данные'))->setRequestContact(true)
+                    (new KeyboardButton('Оставить свой номер телефона'))->setRequestContact(true)
                 ))
                     ->setOneTimeKeyboard(true)
                     ->setResizeKeyboard(true)
