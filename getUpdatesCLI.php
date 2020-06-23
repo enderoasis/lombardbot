@@ -11,9 +11,9 @@ use Longman\TelegramBot\TelegramLog;
 $mysql_credentials = [
     'host'     => 'srv-db-plesk01.ps.kz',
     'port'     => 3306, // optional
-    'user'     => 'lombardb_admin',
-    'password' => 'S^r07si0',
-    'database' => 'lombardb_storage',
+    'user'     => 'lombardb_didar',
+    'password' => '7likC9~2',
+    'database' => 'lombardb_telegrambot',
  ];
 try {
     // Create Telegram API object

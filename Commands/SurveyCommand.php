@@ -69,9 +69,6 @@ class SurveyCommand extends UserCommand
      */
     public function execute()
     {
-      
-    $external_pdo_connection = new PDO('mysql:host=srv-db-plesk01.ps.kz;dbname=lombardb_storage;port=3306','lombardb_admin','S^r07si0');
-    $telegram->enableExternalMySql($external_pdo_connection);
 
 
         $message = $this->getMessage();
