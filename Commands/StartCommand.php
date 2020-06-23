@@ -71,7 +71,7 @@ class StartCommand extends UserCommand
                 $result = Request::sendMessage($data);
             }
             elseif ($text === 'Выложить слот') {
-            return (new SurveyCommand());
+                $this->conversation = new Conversation($user_id, $chat_id, $this->getName());
             }
 
      
