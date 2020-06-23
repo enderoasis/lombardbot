@@ -16,6 +16,7 @@ use Longman\TelegramBot\Entities\Keyboard;
 use Longman\TelegramBot\Entities\KeyboardButton;
 use Longman\TelegramBot\Entities\PhotoSize;
 use Longman\TelegramBot\Request;
+use Longman\TelegramBot\Telegram;
 
 /**
  * User "/survey" command
