@@ -115,14 +115,14 @@ class SurveyCommand extends UserCommand
                     $notes['state'] = 0;
                     $this->conversation->update();
 
-                    $data['text']         = 'Type your name:';
+                    $data['text']         = 'Введите название лота (Пример: Iphone X):';
                     $data['reply_markup'] = Keyboard::remove(['selective' => true]);
 
                     $result = Request::sendMessage($data);
                     break;
                 }
 
-                $notes['name'] = $text;
+                $notes['tittle'] = $text;
                 $text          = '';
 
             // no break
@@ -131,13 +131,13 @@ class SurveyCommand extends UserCommand
                     $notes['state'] = 1;
                     $this->conversation->update();
 
-                    $data['text'] = 'Type your surname:';
+                    $data['text'] = 'Введите категорию лота( Техника, Золото, Драг.изделия, Авто, Меха):';
 
                     $result = Request::sendMessage($data);
                     break;
                 }
 
-                $notes['surname'] = $text;
+                $notes['category'] = $text;
                 $text             = '';
 
             // no break
@@ -146,115 +146,73 @@ class SurveyCommand extends UserCommand
                     $notes['state'] = 2;
                     $this->conversation->update();
 
-                    $data['text'] = 'Type your age:';
+                    $data['text'] = 'Введите ожидаемую сумму:';
                     if ($text !== '') {
-                        $data['text'] = 'Type your age, must be a number:';
+                        $data['text'] = 'Введите сумму. Должна быть в цифрах:';
                     }
 
                     $result = Request::sendMessage($data);
                     break;
                 }
 
-                $notes['age'] = $text;
+                $notes['sum'] = $text;
                 $text         = '';
 
             // no break
             case 3:
-                if ($text === '' || !in_array($text, ['M', 'F'], true)) {
-                    $notes['state'] = 3;
-                    $this->conversation->update();
+            if ($message->getPhoto() === null) {
+                $notes['state'] = 3;
+                $this->conversation->update();
 
-                    $data['reply_markup'] = (new Keyboard(['M', 'F']))
-                        ->setResizeKeyboard(true)
-                        ->setOneTimeKeyboard(true)
-                        ->setSelective(true);
+                $data['text'] = 'Прикрепите фотографию слота:';
 
-                    $data['text'] = 'Select your gender:';
-                    if ($text !== '') {
-                        $data['text'] = 'Select your gender, choose a keyboard option:';
-                    }
+                $result = Request::sendMessage($data);
+                break;
+            }
 
-                    $result = Request::sendMessage($data);
-                    break;
-                }
-
-                $notes['gender'] = $text;
+            /** @var PhotoSize $photo */
+            $photo             = $message->getPhoto()[0];
+            $notes['photo_id'] = $photo->getFileId();
 
             // no break
             case 4:
-                if ($message->getLocation() === null) {
-                    $notes['state'] = 4;
-                    $this->conversation->update();
+            if ($message->getContact() === null) {
+                $notes['state'] = 4;
+                $this->conversation->update();
 
-                    $data['reply_markup'] = (new Keyboard(
-                        (new KeyboardButton('Share Location'))->setRequestLocation(true)
-                    ))
-                        ->setOneTimeKeyboard(true)
-                        ->setResizeKeyboard(true)
-                        ->setSelective(true);
+                $data['reply_markup'] = (new Keyboard(
+                    (new KeyboardButton('Оставьте ваши контактные данные'))->setRequestContact(true)
+                ))
+                    ->setOneTimeKeyboard(true)
+                    ->setResizeKeyboard(true)
+                    ->setSelective(true);
 
-                    $data['text'] = 'Share your location:';
+                $data['text'] = 'Оставьте ваши контактные данные:';
 
-                    $result = Request::sendMessage($data);
-                    break;
-                }
+                $result = Request::sendMessage($data);
+                break;
+            }
 
-                $notes['longitude'] = $message->getLocation()->getLongitude();
-                $notes['latitude']  = $message->getLocation()->getLatitude();
+            $notes['phone_number'] = $message->getContact()->getPhoneNumber();
 
             // no break
             case 5:
-                if ($message->getPhoto() === null) {
-                    $notes['state'] = 5;
-                    $this->conversation->update();
+            $this->conversation->update();
+            $out_text = '/Ваш лот:' . PHP_EOL;
+            unset($notes['state']);
+            foreach ($notes as $k => $v) {
+                $out_text .= PHP_EOL . ucfirst($k) . ': ' . $v;
+            }
 
-                    $data['text'] = 'Insert your picture:';
+            $data['photo']        = $notes['photo_id'];
+            $data['reply_markup'] = Keyboard::remove(['selective' => true]);
+            $data['caption']      = $out_text;
+            $this->conversation->stop();
 
-                    $result = Request::sendMessage($data);
-                    break;
-                }
-
-                /** @var PhotoSize $photo */
-                $photo             = $message->getPhoto()[0];
-                $notes['photo_id'] = $photo->getFileId();
-
-            // no break
-            case 6:
-                if ($message->getContact() === null) {
-                    $notes['state'] = 6;
-                    $this->conversation->update();
-
-                    $data['reply_markup'] = (new Keyboard(
-                        (new KeyboardButton('Share Contact'))->setRequestContact(true)
-                    ))
-                        ->setOneTimeKeyboard(true)
-                        ->setResizeKeyboard(true)
-                        ->setSelective(true);
-
-                    $data['text'] = 'Share your contact information:';
-
-                    $result = Request::sendMessage($data);
-                    break;
-                }
-
-                $notes['phone_number'] = $message->getContact()->getPhoneNumber();
-
-            // no break
-            case 7:
-                $this->conversation->update();
-                $out_text = '/Survey result:' . PHP_EOL;
-                unset($notes['state']);
-                foreach ($notes as $k => $v) {
-                    $out_text .= PHP_EOL . ucfirst($k) . ': ' . $v;
-                }
-
-                $data['photo']        = $notes['photo_id'];
-                $data['reply_markup'] = Keyboard::remove(['selective' => true]);
-                $data['caption']      = $out_text;
-                $this->conversation->stop();
-
-                $result = Request::sendPhoto($data);
-                break;
+            $result = Request::sendPhoto($data);
+            break;
+           
+              
         }
 
         return $result;
