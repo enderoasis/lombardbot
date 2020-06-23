@@ -14,9 +14,9 @@ try {
     $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
 
     // Enable MySQL
-    $telegram->enableExternalMySql($external_pdo_connection);
 
     $external_pdo_connection = new PDO('mysql:host=srv-db-plesk01.ps.kz;dbname=lombardb_storage;port=3306','lombardb_admin','S^r07si0');
+    $telegram->enableExternalMySql($external_pdo_connection);
 
     // Handle telegram getUpdates request
     $telegram->handleGetUpdates();
