@@ -198,7 +198,7 @@ class SurveyCommand extends UserCommand
             // no break
             case 5:
             $this->conversation->update();
-            $out_text = '/Ваш лот:' . PHP_EOL;
+            $out_text = 'Ваш лот:' . PHP_EOL;
             unset($notes['state']);
             foreach ($notes as $k => $v) {
                 $out_text .= PHP_EOL . ucfirst($k) . ': ' . $v;
