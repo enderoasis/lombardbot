@@ -21,7 +21,7 @@ try {
 
     // Enable MySQL
 
-    $telegram->enableExternalMySql($external_pdo_connection);
+    $telegram->enableMySql($mysql_credentials);
 
     // Handle telegram getUpdates request
     $telegram->handleGetUpdates();
