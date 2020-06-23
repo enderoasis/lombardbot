@@ -1,71 +1,58 @@
 <?php
-/**
- * This file is part of the TelegramBot package.
- *
- * (c) Avtandil Kikabidze aka LONGMAN <akalongman@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
-namespace Longman\TelegramBot\Commands\SystemCommands;
+namespace Longman\TelegramBot\Commands\UserCommands;
 
-use Longman\TelegramBot\Commands\SystemCommand;
+use Longman\TelegramBot\Commands\UserCommand;
+use Longman\TelegramBot\Conversation;
+use Longman\TelegramBot\Entities\Keyboard;
+use Longman\TelegramBot\Entities\Update;
 use Longman\TelegramBot\Request;
-use Longman\TelegramBot\Telegram;
 
-/**
- * Start command
- *
- * Gets executed when a user first starts using the bot.
- */
-class StartCommand extends SystemCommand
+class ExecCommand extends UserCommand
 {
-    /**
-     * @var string
-     */
     protected $name = 'start';
-
-    /**
-     * @var string
-     */
-    protected $description = 'Start command';
-
-    /**
-     * @var string
-     */
+    protected $description = 'Exec command';
     protected $usage = '/start';
+    protected $version = '1.0.0';
 
-    /**
-     * @var string
-     */
-    protected $version = '1.1.0';
-
-    /**
-     * @var bool
-     */
-    protected $private_only = true;
-
-    /**
-     * Command execute method
-     *
-     * @return \Longman\TelegramBot\Entities\ServerResponse
-     * @throws \Longman\TelegramBot\Exception\TelegramException
-     */
     public function execute()
     {
         $message = $this->getMessage();
+        $chat    = $message->getChat();
+        $chat_id = $chat->getId();
+        $user_id = $message->getFrom()->getId();
+        $text    = trim($message->getText(true));
 
-        $chat_id = $message->getChat()->getId();
-        $data['reply_markup'] = (new Keyboard(['Выложить лот', 'Для ломбардов','Мой лот']))
-        ->setResizeKeyboard(true)
-        ->setOneTimeKeyboard(true)
-        ->setSelective(true);
         $data = [
             'chat_id' => $chat_id,
-            'text'    => $data['reply_markup'],
         ];
+        if ($chat->isGroupChat() || $chat->isSuperGroup()) {
+            $data['reply_markup'] = Keyboard::forceReply(['selective' => true]);
+        }
 
-        return Request::sendMessage($data);
+        $conversation = new Conversation($user_id, $chat_id, $this->getName());
+
+        if ($text === '') {
+            $data['text']         = 'Choose something';
+            $data['reply_markup'] = new Keyboard(['Need some help', 'Who am I?']);
+
+            return Request::sendMessage($data);
+        }
+
+        $update = json_decode($this->update->toJson(), true);
+
+        if ($text === 'Need some help') {
+            $update['message']['text'] = '/help';
+            $result = (new HelpCommand($this->telegram, new Update($update)))->preExecute();
+        } elseif ($text === 'Who am I?') {
+            $update['message']['text'] = '/whoami';
+            $result = (new WhoamiCommand($this->telegram, new Update($update)))->preExecute();
+        } else {
+            $data['text'] = 'Invalid selection...';
+            return Request::sendMessage($data);
+        }
+
+        $conversation->stop();
+        return $result;
     }
 }
