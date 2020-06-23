@@ -72,7 +72,7 @@ class StartCommand extends UserCommand
             }
             elseif ($text === 'Выложить слот') {
                 unset($text);
-            return (new SurveyCommand($this->telegram, new Update($update)))->preExecute();
+                return (new SurveyCommand($this->telegram, new Update($update)))->preExecute();
             }
 
      
