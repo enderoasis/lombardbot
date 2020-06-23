@@ -8,14 +8,19 @@ $bot_username = 'SmartPrototype_bot';
 
 use Longman\TelegramBot\Telegram;
 use Longman\TelegramBot\TelegramLog;
-
+$mysql_credentials = [
+    'host'     => 'srv-db-plesk01.ps.kz',
+    'port'     => 3306, // optional
+    'user'     => 'lombardb_admin',
+    'password' => 'S^r07si0',
+    'database' => 'lombardb_storage',
+ ];
 try {
     // Create Telegram API object
     $telegram = new Longman\TelegramBot\Telegram($bot_api_key, $bot_username);
 
     // Enable MySQL
 
-    $external_pdo_connection = new PDO('mysql:host=srv-db-plesk01.ps.kz;dbname=lombardb_storage;port=3306','lombardb_admin','S^r07si0');
     $telegram->enableExternalMySql($external_pdo_connection);
 
     // Handle telegram getUpdates request
