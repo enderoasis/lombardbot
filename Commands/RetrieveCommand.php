@@ -57,9 +57,9 @@ class RetrieveCommand extends UserCommand
                 SELECT `notes`
                 FROM `' . conversation . '`
             ';
-        $sth = $this->$pdo->prepare($sql1);
-        $sth->execute();
-        $result = $sth->fetchColumn(PDO::FETCH_ASSOC);
+            $query = $pdo->query($sql1);
+        $query->execute();
+        $result =  $query->fetch(PDO::FETCH_ASSOC);
 
         $data = [
             'chat_id'      => $this->getMessage()->getChat()->getId(),
