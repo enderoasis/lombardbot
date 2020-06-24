@@ -66,9 +66,10 @@ class RetrieveCommand extends UserCommand
             'text'         => 'Choose something',
             'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбардов']),
         ];
+        return Request::sendMessage($data);
+
         return Request::sendMessage($retrvdata);
 
-        return Request::sendMessage($data);
         
     }
 }
