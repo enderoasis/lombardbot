@@ -47,10 +47,12 @@ class StartCommand extends UserCommand
      */
     public function execute()
     {
-        //$message = $this->getMessage();
-        //$chat_id = $message->getChat()->getId();
-        //$user_id = $message->getFrom()->getId();
+        $data = [
+            'chat_id'      => $this->getMessage()->getChat()->getId(),
+            'text'         => 'Choose something',
+            'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбардов']),
+        ];
 
-        return Request::emptyResponse();
+        return Request::sendMessage($data);
     }
 }
