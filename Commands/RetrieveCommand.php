@@ -57,19 +57,18 @@ class RetrieveCommand extends UserCommand
                 SELECT `notes`
                 FROM `' . conversation . '`
             ';
-            $query = $pdo->query($sql1);
-        $query->execute();
-        $retrvdata =  $query->fetch(PDO::FETCH_ASSOC);
+        $sth = $this->$pdo->prepare($sql1);
+        $sth->execute();
+        $result1 = $sth->fetch(PDO::FETCH_ASSOC);
 
         $data = [
             'chat_id'      => $this->getMessage()->getChat()->getId(),
             'text'         => 'Choose something',
             'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбардов']),
         ];
+        return Request::sendMessage($result1);
+
         return Request::sendMessage($data);
-
-        return Request::sendMessage($retrvdata);
-
         
     }
 }
