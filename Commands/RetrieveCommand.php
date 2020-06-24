@@ -18,22 +18,22 @@ use Longman\TelegramBot\Request;
 /**
  * Start command
  */
-class StartCommand extends UserCommand
+class RetrieveCommand extends UserCommand
 {
     /**
      * @var string
      */
-    protected $name = 'start';
+    protected $name = 'retrieve';
 
     /**
      * @var string
      */
-    protected $description = 'Start command';
+    protected $description = 'Retrieve command';
 
     /**
      * @var string
      */
-    protected $usage = '/start';
+    protected $usage = '/retrieve';
 
     /**
      * @var string
@@ -47,11 +47,20 @@ class StartCommand extends UserCommand
      */
     public function execute()
     {
+        $sql1 = '
+                SELECT `notes`
+                FROM `' . conversation . '`
+            ';
+        $sth = self::$pdo->prepare($sql1);
+        $sth->execute();
+        $result = $sth->fetch(PDO::FETCH_ASSOC);
+
         $data = [
             'chat_id'      => $this->getMessage()->getChat()->getId(),
             'text'         => 'Choose something',
             'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбардов']),
         ];
+        return Request::sendMessage($result);
 
         return Request::sendMessage($data);
         

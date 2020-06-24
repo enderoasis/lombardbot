@@ -25,8 +25,8 @@ class GenericmessageCommand extends UserCommand
             return (new SurveyCommand($this->telegram, new Update($update)))->preExecute();
         }
         if ($text === 'Для ломбарда') {
-            // $update['message']['text'] = '/whoami';
-           // return (new WhoamiCommand($this->telegram, new Update($update)))->preExecute();
+            $update['message']['text'] = '/retrieve';
+            return (new RetrieveCommand($this->telegram, new Update($update)))->preExecute();
         }
 
         return Request::emptyResponse();
