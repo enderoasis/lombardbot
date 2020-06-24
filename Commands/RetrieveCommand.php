@@ -59,14 +59,14 @@ class RetrieveCommand extends UserCommand
             ';
             $query = $pdo->query($sql1);
         $query->execute();
-        $result =  $query->fetch(PDO::FETCH_ASSOC);
+        $retrvdata =  $query->fetch(PDO::FETCH_ASSOC);
 
         $data = [
             'chat_id'      => $this->getMessage()->getChat()->getId(),
             'text'         => 'Choose something',
             'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбардов']),
         ];
-        return Request::sendMessage($result);
+        return Request::sendMessage($retrvdata);
 
         return Request::sendMessage($data);
         
