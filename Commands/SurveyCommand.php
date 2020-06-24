@@ -28,7 +28,7 @@ class SurveyCommand extends UserCommand
     /**
      * @var string
      */
-    protected $name = 'survey';
+    protected $name = 'start';
 
     /**
      * @var string
@@ -38,7 +38,7 @@ class SurveyCommand extends UserCommand
     /**
      * @var string
      */
-    protected $usage = '/survey';
+    protected $usage = '/start';
 
     /**
      * @var string
@@ -70,7 +70,12 @@ class SurveyCommand extends UserCommand
      */
     public function execute()
     {
-       
+        $data = [
+            'chat_id'      => $this->getMessage()->getChat()->getId(),
+            'text'         => 'Добро пожаловать! Вам доступны следующие действия:',
+            'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбарда']),
+        ];
+        return Request::sendMessage($data);
 
         $message = $this->getMessage();
 
@@ -82,9 +87,9 @@ class SurveyCommand extends UserCommand
 
    
         //Preparing Response
-        $data = [
-            'chat_id' => $chat_id,
-        ];
+       // $data = [
+         //   'chat_id' => $chat_id,
+        //];
 
         if ($chat->isGroupChat() || $chat->isSuperGroup()) {
             //reply to message id is applied by default
@@ -111,7 +116,7 @@ class SurveyCommand extends UserCommand
         //Every time a step is achieved the track is updated
         switch ($state) {
             case 0:
-                if ($text === '') { 
+                if ($text === 'Выложить слот') { 
                     $notes['state'] = 0;
                     $this->conversation->update();
 
