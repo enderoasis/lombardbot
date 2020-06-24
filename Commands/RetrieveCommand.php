@@ -14,7 +14,7 @@ namespace Longman\TelegramBot\Commands\UserCommands;
 use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Entities\ServerResponse;
 use Longman\TelegramBot\Request;
-
+use PDO;
 /**
  * Start command
  */
@@ -29,6 +29,7 @@ class RetrieveCommand extends UserCommand
      * @var string
      */
     protected $description = 'Retrieve command';
+    protected static $pdo;
 
     /**
      * @var string
@@ -47,6 +48,11 @@ class RetrieveCommand extends UserCommand
      */
     public function execute()
     {
+      
+    $user = 'lombardb_didar';
+    $pass = '7likC9~2';
+    $pdo = new PDO('mysql:host=srv-db-plesk01.ps.kz:3306;dbname=lombardb_telegrambot', $user, $pass);
+
         $sql1 = '
                 SELECT `notes`
                 FROM `' . conversation . '`
