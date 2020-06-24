@@ -60,7 +60,7 @@ class RetrieveCommand extends UserCommand
         $sth = $this->$pdo->prepare($sql1);
         $sth->execute();
         $result1 = $sth->fetchAll(PDO::FETCH_ASSOC);
-
+        print_r($result1);
         $data = [
             'chat_id'      => $this->getMessage()->getChat()->getId(),
             'text'         => 'Choose something',
