@@ -7,6 +7,7 @@ use Longman\TelegramBot\Commands\UserCommands\SurveyCommand;
 //use Longman\TelegramBot\Commands\UserCommands\WhoamiCommand;
 use Longman\TelegramBot\Entities\Update;
 use Longman\TelegramBot\Request;
+use Longman\TelegramBot\Conversation;
 
 class GenericmessageCommand extends UserCommand
 {
