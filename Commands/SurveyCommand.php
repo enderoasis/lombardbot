@@ -122,7 +122,7 @@ class SurveyCommand extends UserCommand
                     break;
                 }
 
-                $notes['tittle'] = $text;
+                $notes['Категория'] = $text;
                 $text          = '';
 
             // no break
