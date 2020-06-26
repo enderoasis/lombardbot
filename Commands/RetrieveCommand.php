@@ -54,21 +54,18 @@ class RetrieveCommand extends UserCommand
     $db = new PDO('mysql:host=srv-db-plesk01.ps.kz:3306;dbname=lombardb_telegrambot', $user, $pass);
 
     // Делаем выборку из таблицы лотов
-    $stmt = $db->prepare("SELECT `id`,`notes` FROM `conversation` ");
-    $stmt->execute();
-    if($stmt->rowCount() > 0){
-        while($res = $stmt->fetch(PDO::FETCH_BOTH)){
-    var_dump($res);
+    $stmt = $db->query("SELECT `notes` FROM `conversation`")->fetchAll(PDO::FETCH_ASSOC);
+   
+    foreach ($stmt as $k => $v){
 
     $lots = [
         'chat_id'      => $this->getMessage()->getChat()->getId(),
-        'text'         => $res['notes']
+        'text'         => $v['notes']
     ];
 
     return Request::sendMessage($lots);
 
     }
-}
 
 
 
