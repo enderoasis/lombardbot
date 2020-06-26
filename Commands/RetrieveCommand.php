@@ -56,7 +56,7 @@ class RetrieveCommand extends UserCommand
     // Делаем выборку из таблицы лотов
     $stmt = $db->query("SELECT * FROM conversation")->fetchAll(PDO::FETCH_ASSOC);;
    
-    foreach ($stmt as $k => $v){
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
     $lots = [
         'chat_id'      => $this->getMessage()->getChat()->getId(),
