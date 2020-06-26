@@ -58,7 +58,7 @@ class RetrieveCommand extends UserCommand
     $stmt->execute();
     if($stmt->rowCount() > 0){
         while($res = $stmt->fetch(PDO::FETCH_BOTH)){
-    
+    var_dump($res);
 
     $lots = [
         'chat_id'      => $this->getMessage()->getChat()->getId(),
