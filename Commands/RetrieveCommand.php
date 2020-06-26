@@ -60,7 +60,7 @@ class RetrieveCommand extends UserCommand
 
     $lots = [
         'chat_id'      => $this->getMessage()->getChat()->getId(),
-        'text'         => $v['notes'][0]
+        'text'         => $v['notes'][4]
     ];
 
     return Request::sendMessage($lots);
