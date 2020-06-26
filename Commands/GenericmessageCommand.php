@@ -38,7 +38,10 @@ class GenericmessageCommand extends UserCommand
             $update['message']['text'] = '/retrieve';
             return (new RetrieveCommand($this->telegram, new Update($update)))->preExecute();
         }
-
+        if ($text === 'Главная страница') {
+            $update['message']['text'] = '/start';
+            return (new StartCommand($this->telegram, new Update($update)))->preExecute();
+        }
         return Request::emptyResponse();
     }
 }

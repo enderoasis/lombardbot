@@ -63,7 +63,7 @@ class StartCommand extends UserCommand
         $data = [
             'chat_id'      => $this->getMessage()->getChat()->getId(),
             'text'         => 'Добро пожаловать! Вам доступны следующие действия:',
-            'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбарда']),
+            'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбарда','Главная страница']),
         ];
         return Request::sendMessage($data);
        
