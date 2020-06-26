@@ -116,7 +116,6 @@ class SurveyCommand extends UserCommand
                     $this->conversation->update();
 
                     $data['text']         = 'Введите название лота (Пример: Iphone X):';
-                    $data['reply_markup'] = Keyboard::remove(['selective' => true]);
 
                     $result = Request::sendMessage($data);
                     break;
@@ -132,6 +131,7 @@ class SurveyCommand extends UserCommand
                     $this->conversation->update();
 
                     $data['text'] = 'Введите категорию лота( Техника, Золото, Драг.изделия, Авто, Меха):';
+                    $data['reply_markup'] = Keyboard::remove(['selective' => true]);
 
                     $result = Request::sendMessage($data);
                     break;
