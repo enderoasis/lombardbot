@@ -123,7 +123,7 @@ class SurveyCommand extends UserCommand
                 }
 
                 $notes['tittle'] = $text;
-                $text = '';
+                $text          = '';
 
             // no break
             case 1:
