@@ -16,6 +16,15 @@ class GenericmessageCommand extends UserCommand
 
     public function execute()
     {
+         //If a conversation is busy, execute the conversation command after handling the message
+    $conversation = new Conversation(
+        $this->getMessage()->getFrom()->getId(),
+        $this->getMessage()->getChat()->getId()
+    );
+    //Fetch conversation command if it exists and execute it
+    if ($conversation->exists() && ($command = $conversation->getCommand())) {
+        return $this->telegram->executeCommand($command);
+    }
         $text = trim($this->getMessage()->getText(true));
 
         $update = json_decode($this->update->toJson(), true);
