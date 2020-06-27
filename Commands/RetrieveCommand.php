@@ -56,16 +56,18 @@ class RetrieveCommand extends UserCommand
     // Делаем выборку из таблицы лотов
     $stmt = $db->query("SELECT `notes` FROM `conversation`")->fetchAll(PDO::FETCH_ASSOC);
    
-    foreach ($stmt as $k => $v){
+  //  foreach ($stmt as $k => $v){
+    for ($i = 1; $i <= 10; $i++) {
 
     $lots = [
         'chat_id'      => $this->getMessage()->getChat()->getId(),
-        'text'         => $v['notes']
+        'text'         => $stmt[i]
     ];
 
     return Request::sendMessage($lots);
+}
 
-    }
+    //}
 
 
 
