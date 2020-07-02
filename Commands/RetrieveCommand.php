@@ -66,7 +66,7 @@ class RetrieveCommand extends UserCommand
 
     $data = [
             'chat_id'      => $this->getMessage()->getChat()->getId(),
-            'text'         => 'Choose something',
+            'text'         => $v['notes'],
             'reply_markup' => new Keyboard(['Выложить слот', 'Для ломбардов']),
         ];
 
