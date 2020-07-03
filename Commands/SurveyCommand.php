@@ -17,7 +17,7 @@ use Longman\TelegramBot\Entities\KeyboardButton;
 use Longman\TelegramBot\Entities\PhotoSize;
 use Longman\TelegramBot\Request;
 use Longman\TelegramBot\Telegram;
-
+use PDO;
 /**
  * User "/survey" command
  *
@@ -120,8 +120,9 @@ class SurveyCommand extends UserCommand
                     $result = Request::sendMessage($data);
                     break;
                 }
-
+                
                 $notes['tittle'] = $text;
+                $tittle = $text;
                 $text          = '';
 
             // no break
@@ -138,6 +139,7 @@ class SurveyCommand extends UserCommand
                 }
 
                 $notes['category'] = $text;
+                $category = $text;
                 $text             = '';
 
             // no break
@@ -156,6 +158,7 @@ class SurveyCommand extends UserCommand
                 }
 
                 $notes['sum'] = $text;
+                $sum = $text;
                 $text         = '';
 
             // no break
@@ -194,7 +197,7 @@ class SurveyCommand extends UserCommand
             }
 
             $notes['phone_number'] = $message->getContact()->getPhoneNumber();
-
+            $telephone = $notes['phone_number'];
             // no break
             case 5:
             $this->conversation->update();
@@ -209,7 +212,17 @@ class SurveyCommand extends UserCommand
             $data['caption']      = $out_text;
             $this->conversation->stop();
 
+
             $result = Request::sendPhoto($data);
+            $insdata = [
+                'tittle' => $tittle,
+                'category' => $category,
+                'sum' => $sum,
+                'telephone' => $telephone,
+            ];
+            $sql = "INSERT INTO conversation (tittle, category, sum, telephone) VALUES (:tittle, :category, :sum, :telephone)";
+            $stmt= $pdo->prepare($sql);
+            $stmt->execute($insdata);
             break;
            
               
