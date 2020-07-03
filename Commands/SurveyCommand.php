@@ -210,6 +210,11 @@ class SurveyCommand extends UserCommand
             $data['photo']        = $notes['photo_id'];
             $data['reply_markup'] = Keyboard::remove(['selective' => true]);
             $data['caption']      = $out_text;
+            $user = 'lombardb_didar';
+            $pass = '7likC9~2';
+            $db = new PDO('mysql:host=srv-db-plesk01.ps.kz:3306;dbname=lombardb_telegrambot', $user, $pass);
+        
+           
             $insdata = [
                 'tittle' => $tittle,
                 'category' => $category,
@@ -217,7 +222,7 @@ class SurveyCommand extends UserCommand
                 'telephone' => $telephone,
             ];
             $sql = "INSERT INTO conversation (tittle, category, sum, telephone) VALUES (:tittle, :category, :sum, :telephone)";
-            $stmt= $pdo->prepare($sql);
+            $stmt= $db->prepare($sql);
             $stmt->execute($insdata);
             $this->conversation->stop();
 
