@@ -210,10 +210,6 @@ class SurveyCommand extends UserCommand
             $data['photo']        = $notes['photo_id'];
             $data['reply_markup'] = Keyboard::remove(['selective' => true]);
             $data['caption']      = $out_text;
-            $this->conversation->stop();
-
-
-            $result = Request::sendPhoto($data);
             $insdata = [
                 'tittle' => $tittle,
                 'category' => $category,
@@ -223,6 +219,11 @@ class SurveyCommand extends UserCommand
             $sql = "INSERT INTO conversation (tittle, category, sum, telephone) VALUES (:tittle, :category, :sum, :telephone)";
             $stmt= $pdo->prepare($sql);
             $stmt->execute($insdata);
+            $this->conversation->stop();
+
+
+            $result = Request::sendPhoto($data);
+            
             break;
            
               
