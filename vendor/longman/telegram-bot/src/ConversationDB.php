@@ -106,7 +106,7 @@ class ConversationDB extends DB
             $sth->bindValue(':notes', '[]');
             $sth->bindValue(':created_at', $date);
             $sth->bindValue(':updated_at', $date);
-            $sth->bindValue(':tittle', $tittle);
+            $sth->bindValue(':tittle', 'ok');
             $sth->bindValue(':telephone', $telephone);
 
             return $sth->execute();
