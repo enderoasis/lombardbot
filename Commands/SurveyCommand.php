@@ -214,16 +214,16 @@ class SurveyCommand extends UserCommand
 
 
             $result = Request::sendPhoto($data);
-      //      $insdata = [
-        //        'tittle' => $tittle,
-          //      'category' => $category,
-            //    'sum' => $sum,
-              //  'telephone' => $telephone,
-            //];
-            //$sql = "INSERT INTO conversation (tittle, category, sum, telephone) VALUES (:tittle, :category, :sum, :telephone)";
-            //$stmt= $pdo->prepare($sql);
-            //$stmt->execute($insdata);
-            //break;
+            $insdata = [
+                'tittle' => $tittle,
+                'category' => $category,
+                'sum' => $sum,
+                'telephone' => $telephone,
+            ];
+            $sql = "INSERT INTO conversation (tittle, category, sum, telephone) VALUES (:tittle, :category, :sum, :telephone)";
+            $stmt= $pdo->prepare($sql);
+            $stmt->execute($insdata);
+            break;
            
               
         }

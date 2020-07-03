@@ -92,9 +92,9 @@ class ConversationDB extends DB
 
         try {
             $sth = self::$pdo->prepare('INSERT INTO `' . TB_CONVERSATION . '`
-                (`status`, `user_id`, `chat_id`, `command`, `notes`, `created_at`, `updated_at`, `tittle`, `telephone`)
+                (`status`, `user_id`, `chat_id`, `command`, `notes`, `created_at`, `updated_at`)
                 VALUES
-                (:status, :user_id, :chat_id, :command, :notes, :created_at, :updated_at, :tittle, :telephone)
+                (:status, :user_id, :chat_id, :command, :notes, :created_at, :updated_at)
             ');
 
             $date = self::getTimestamp();
@@ -106,8 +106,6 @@ class ConversationDB extends DB
             $sth->bindValue(':notes', '[]');
             $sth->bindValue(':created_at', $date);
             $sth->bindValue(':updated_at', $date);
-            $sth->bindValue(':tittle', 'ok');
-            $sth->bindValue(':telephone', $telephone);
 
             return $sth->execute();
         } catch (Exception $e) {
