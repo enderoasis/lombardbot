@@ -21,7 +21,8 @@ use PDO;
  
     }
 
-?><section id="main-content">
+?>
+<section id="main-content">
 <section class="wrapper site-min-height">
   <h3><i class="fa fa-angle-right"></i> Список лотов</h3>
   <hr>
@@ -29,12 +30,12 @@ use PDO;
  
     <div style="padding:10px; margin-bottom:10px; border-bottom:#333 2px solid;">
         <strong><?php echo  $row['tittle']; ?></strong><br />
-        <i>Автор: <?php echo $row['category']; ?></i> / 
+        <i>Категория: <?php echo $row['category']; ?></i> / 
         <i>Дата публикации: <?php $row['date']; ?></i><br /><br />
         <p><?php echo $row['description']; ?></p>
         <p style="text-align:right; text-decoration:underline;">
         <a class="fancybox" href="<?=$row['location']  ?>">
-            <img class="img-responsive" src="<?=$row['location']  ?>">Подробнее</a>
+            <img class="img-responsive" src="<?=$row['location']  ?>"></a>
         </p>
     </div>
  
