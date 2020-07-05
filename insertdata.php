@@ -17,7 +17,7 @@ if( !empty( $_FILES['image']['name'] ) ) {
       // Читаем содержимое файла
       $image = file_get_contents( $_FILES['image']['tmp_name'] );
       // Экранируем специальные символы в содержимом файла
-      $image = quote( $image );
+      $image = $db->quote( $image );
       // Формируем запрос на добавление файла в базу данных
       $sql = "INSERT INTO goods (tittle, category, email, content ) VALUES (?,?,?,?,?)";
       $stmt= $db->prepare($sql);
