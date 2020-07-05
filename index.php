@@ -7,7 +7,7 @@ use PDO;
     // Делаем выборку из таблицы лотов
     $stmt = $db->query("SELECT `notes` FROM `conversation`")->fetchAll(PDO::FETCH_ASSOC);
 
-
+   
 
 ?>
 
