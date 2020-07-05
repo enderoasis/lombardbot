@@ -7,19 +7,7 @@ use PDO;
     // Делаем выборку из таблицы лотов
     $stmt = $db->query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
 
-    foreach($stmt as $row) {
-     
-     $id=$row['id'];
-     $tittle = $row['tittle'];
-     $category = $row['category'];
-     $description = $row['description'];
-     $path = $row['location'];
-     
-     echo $row['tittle'] . "<br />";
-     echo $row['category'] . $row['time'] . "<br />";
-     echo $row['description'];
- 
-    }
+  
 
 ?>
 <section id="main-content">
