@@ -102,15 +102,15 @@
           <div class="col-lg-12">
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="insertdata.php">
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Название слота (обязательно)</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="cname" name="name" minlength="2" type="text" required />
+                      <input class=" form-control" id="tittle" name="name" minlength="2" type="text" required />
                     </div>
                   </div>
                        <div class="form-group ">
-                   <select class="form-control">
+                   <select class="form-control" name="category">
                   <option>Выберите категорию</option>
                   <option>Техника</option>
                   <option>Драгоценные металлы</option>
@@ -120,7 +120,7 @@
                   <div class="form-group ">
                     <label for="cemail" class="control-label col-lg-2">E-Mail (обязательно)</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="cemail" type="email" name="email" required />
+                      <input class="form-control " id="email" type="email" name="email" required />
                     </div>
                   </div>
                   <div class="form-group last">
@@ -135,7 +135,7 @@
                         <span class="btn btn-theme02 btn-file">
                           <span class="fileupload-new"><i class="fa fa-paperclip"></i> Выбрать</span>
                         <span class="fileupload-exists"><i class="fa fa-undo"></i> Поменять</span>
-                        <input type="file" class="default" />
+                        <input type="file" name="image" class="default" />
                         </span>
                         <a href="#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Удалить</a>
                       </div>
@@ -146,7 +146,7 @@
                   <div class="form-group ">
                     <label for="ccomment" class="control-label col-lg-2">Описание  </label>
                     <div class="col-lg-10">
-                      <textarea class="form-control " id="ccomment" name="comment" ></textarea>
+                      <textarea class="form-control " id="ccomment" name="description" ></textarea>
                     </div>
                   </div>
                   <div class="form-group">
