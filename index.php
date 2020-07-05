@@ -83,7 +83,7 @@ use PDO;
               </a>
           </li>
           <li>
-            <a href="inbox.html">
+            <a href="inbox.php">
               <i class="fa fa-plus"></i>
               <span>Выложить слот </span>
               </a>
