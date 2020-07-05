@@ -113,7 +113,7 @@ use PDO;
               <div class="project">
                 <div class="photo-wrapper">
                   <div class="photo">
-                    <a class="fancybox" href=""><img class="img-responsive" src="<?=$row['location']?>" alt=""></a>
+                    <a class="fancybox" href="<?=$row['location']?>"><img class="img-responsive" src="<?=$row['location']?>" alt=""></a>
                   </div>
                   <div class="overlay"></div>
                 </div>
@@ -126,7 +126,7 @@ use PDO;
               <div class="project">
                 <div class="photo-wrapper">
                   <div class="photo">
-                    <a class="fancybox" href="img/portfolio/port05.jpg"><img class="img-responsive" src="img/portfolio/port05.jpg" alt=""></a>
+                    <a class="fancybox" href="<?=$row['location']?>"><img class="img-responsive" src="<?=$row['location']?>" alt=""></a>
                   </div>
                   <div class="overlay"></div>
                 </div>
@@ -139,7 +139,7 @@ use PDO;
               <div class="project">
                 <div class="photo-wrapper">
                   <div class="photo">
-                    <a class="fancybox" href="img/portfolio/port06.jpg"><img class="img-responsive" src="img/portfolio/port06.jpg" alt=""></a>
+                    <a class="fancybox" href="<?=$row['location']?>"><img class="img-responsive" src="<?=$row['location']?>" alt=""></a>
                   </div>
                   <div class="overlay"></div>
                 </div>
