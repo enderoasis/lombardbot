@@ -7,7 +7,17 @@ use PDO;
     // Делаем выборку из таблицы лотов
     $stmt = $db->query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
 
-   
+    foreach($stmt as $row) {
+     
+     $id=$row['id'];
+     $tittle = $row['tittle'];
+     $category = $row['category'];
+     $description = $row['description'];
+     $path = $row['location'];
+     
+      
+ 
+    }
 
 ?>
 
@@ -103,17 +113,13 @@ use PDO;
         <h3><i class="fa fa-angle-right"></i> Список лотов</h3>
         <hr>
         <div class="row mt">
-        	<ul>
-<?php foreach($stmt as $row): ?>
-    <li><?=$row['location']?></li>
-<?php endforeach ?>
-</ul>
+         
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
             <div class="project-wrapper">
               <div class="project">
                 <div class="photo-wrapper">
                   <div class="photo">
-                    <a class="fancybox" href="<?=$row['location']?>"><img class="img-responsive" src="<?=$row['location']?>" alt=""></a>
+                    <a class="fancybox" href="<?=$path?>"><img class="img-responsive" src="<?=$path?>" alt=""></a>
                   </div>
                   <div class="overlay"></div>
                 </div>
