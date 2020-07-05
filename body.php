@@ -17,7 +17,7 @@ use PDO;
   <?php foreach($stmt as $row): ?>
  
     <div style="padding:10px; margin-bottom:10px; border-bottom:#333 2px solid;">
-        <strong><?php echo  $row['tittle']; ?></strong><br />
+        <h2><strong><?php echo  $row['tittle']; ?></strong></h2><br />
         <i>Категория: <?php echo $row['category']; ?></i> / 
         <i>Дата публикации: <?php $row['date']; ?></i><br /><br />
         <p><?php echo $row['description']; ?></p>
