@@ -15,7 +15,9 @@ use PDO;
      $description = $row['description'];
      $path = $row['location'];
      
-      
+     echo $row['tittle'] . "<br />";
+     echo $row['category'] . $row['time'] . "<br />";
+     echo $row['description'];
  
     }
 
@@ -115,6 +117,7 @@ use PDO;
         <div class="row mt">
          
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+    
             <div class="project-wrapper">
               <div class="project">
                 <div class="photo-wrapper">
