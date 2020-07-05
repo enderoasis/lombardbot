@@ -8,23 +8,27 @@ $description = $_POST['description'];
 $user = 'lombardb_didar';
 $pass = '7likC9~2';
 $db = new PDO('mysql:host=srv-db-plesk01.ps.kz:3306;dbname=lombardb_telegrambot', $user, $pass);
+//$sql = "INSERT INTO goods (tittle, category, email, content ) VALUES (?,?,?,?,?)";
 
-if( !empty( $_FILES['image']['name'] ) ) {
-  // Проверяем, что при загрузке не произошло ошибок
-  if ( $_FILES['image']['error'] == 0 ) {
-    // Если файл загружен успешно, то проверяем - графический ли он
-    if( substr($_FILES['image']['type'], 0, 5)=='image' ) {
-      // Читаем содержимое файла
-      $image = file_get_contents( $_FILES['image']['tmp_name'] );
-      // Экранируем специальные символы в содержимом файла
-      $image = $db->quote( $image );
-      // Формируем запрос на добавление файла в базу данных
-      var_dump($tittle);
-      $sql = "INSERT INTO goods (tittle, category, email, content ) VALUES (?,?,?,?,?)";
-      $stmt= $db->prepare($sql);
-      $stmt->execute([$tittle, $category, $email, $image, $description]);
-   
+if(ISSET($_POST['upload'])){
+    $file_name = $_FILES['image']['name'];
+    $file_temp = $_FILES['image']['tmp_name'];
+    $allowed_ext = array("jpeg", "jpg", "gif", "png");
+    $exp = explode(".", $file_name);
+    $ext = end($exp);
+    $path = "upload/".$file_name;
+    if(in_array($ext, $allowed_ext)){
+        if(move_uploaded_file($file_temp, $path)){
+            try{
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "INSERT INTO `goods`(tittle, category, email, image_name, location)  VALUES ('$tittle','$category','$email','$file_name', '$path')";
+                $db->exec($sql);
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
+
+            $db = null;
+            header('location: index.php');
+        }
     }
-  }
-}
 ?>

@@ -151,7 +151,7 @@
                   </div>
                   <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-10">
-                      <button class="btn btn-theme" type="submit">Опубликовать</button>
+                      <button class="btn btn-theme" type="submit" name="upload">Опубликовать</button>
                     </div>
                   </div>
                 </form>
