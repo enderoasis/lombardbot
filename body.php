@@ -16,14 +16,14 @@ use PDO;
   <hr>
   <?php foreach($stmt as $row): ?>
  
-    <div style="padding:10px; margin-bottom:10px; border-bottom:#333 2px solid;">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
         <h2><strong><?php echo  $row['tittle']; ?></strong></h2><br />
         <i>Категория: <?php echo $row['category']; ?></i> / 
         <i>Дата публикации: <?php echo $row['date']; ?></i><br /><br />
         <p><?php echo $row['description']; ?></p>
         <p style="text-align:right; text-decoration:underline;">
          <a class="fancybox" href="<?=$row['location']  ?>">
-          <center>  <img class="" style="height: 300px; width: 200px;" src="<?=$row['location']  ?>"></a> </center>
+          <center>  <img class="img-responsive"  src="<?=$row['location']  ?>"></a> </center>
         </p>
     </div>
  
