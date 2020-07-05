@@ -1,5 +1,7 @@
 <?php
 // Проверяем пришел ли файл
+namespace Longman\TelegramBot\Commands\UserCommands;
+
 use PDO;
 $tittle = $_POST['tittle'];
 $category = $_POST['category'];
