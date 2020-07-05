@@ -102,7 +102,7 @@
           <div class="col-lg-12">
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="insertdata.php">
+                <form class="cmxform form-horizontal style-form" enctype="multipart/form-data" id="commentForm" method="post" action="insertdata.php">
                   <div class="form-group ">
                     <label for="cname" class="control-label col-lg-2">Название слота (обязательно)</label>
                     <div class="col-lg-10">
