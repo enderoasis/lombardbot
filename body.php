@@ -34,8 +34,8 @@ use PDO;
         <i>Дата публикации: <?php $row['date']; ?></i><br /><br />
         <p><?php echo $row['description']; ?></p>
         <p style="text-align:right; text-decoration:underline;">
-        <a class="fancybox" href="<?=$row['location']  ?>">
-            <img class="img-responsive" src="<?=$row['location']  ?>"></a>
+        <div class="photo"><a class="fancybox" href="<?=$row['location']  ?>">
+            <img class="img-responsive" src="<?=$row['location']  ?>"></a> </div>
         </p>
     </div>
  
