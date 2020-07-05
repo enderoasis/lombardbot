@@ -30,5 +30,5 @@ if(ISSET($_POST['upload'])){
             $db = null;
             header('location: index.php');
         }
-    }
+    }}
 ?>
