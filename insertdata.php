@@ -21,7 +21,7 @@ if(ISSET($_POST['upload'])){
         if(move_uploaded_file($file_temp, $path)){
             try{
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "INSERT INTO `goods`(tittle, category, email, image_name, location)  VALUES ('$tittle','$category','$email','$file_name', '$path')";
+                $sql = "INSERT INTO `goods`(tittle, category, email, description, image_name, location)  VALUES ('$tittle','$category','$email', '$description','$file_name', '$path')";
                 $db->exec($sql);
             }catch(PDOException $e){
                 echo $e->getMessage();
@@ -29,6 +29,7 @@ if(ISSET($_POST['upload'])){
 
             $db = null;
             header('location: index.php');
+            $_SESSION['status'] = 'Uploaded';
         }
     }}
 ?>
