@@ -1,7 +1,7 @@
 <?php
 // Проверяем пришел ли файл
 
-$tittle = $_POST['tittle'];
+$tittle = $_POST['name'];
 $category = $_POST['category'];
 $email = $_POST['email'];
 $description = $_POST['description'];
