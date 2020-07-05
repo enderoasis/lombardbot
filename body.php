@@ -24,7 +24,7 @@ use PDO;
         <p style="text-align:right; text-decoration:underline;">
         <div class="project-wrapper">
         <div class="project"> <div class="photo-wrapper"> <div class="photo"><a class="fancybox" href="<?=$row['location']  ?>">
-            <img class="img-responsive" src="<?=$row['location']  ?>"></a> </div></div></div></div>
+            <img class="" src="<?=$row['location']  ?>"></a> </div></div></div></div>
         </p>
     </div>
  
