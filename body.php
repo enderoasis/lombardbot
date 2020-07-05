@@ -22,9 +22,8 @@ use PDO;
         <i>Дата публикации: <?php $row['date']; ?></i><br /><br />
         <p><?php echo $row['description']; ?></p>
         <p style="text-align:right; text-decoration:underline;">
-        <div class="project-wrapper">
-        <div class="project"> <div class="photo-wrapper"> <div class="photo"><a class="fancybox" href="<?=$row['location']  ?>">
-            <img class="" src="<?=$row['location']  ?>"></a> </div></div></div></div>
+         <div class="photo-wrapper"> <div class="photo"><a class="fancybox" href="<?=$row['location']  ?>">
+          <center>  <img class="" style="height: 300px; width: 200px;" src="<?=$row['location']  ?>"></a> </center></div></div>
         </p>
     </div>
  
