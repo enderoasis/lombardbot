@@ -28,8 +28,8 @@ if(ISSET($_POST['upload'])){
             }
 
             $db = null;
-            header( "refresh:5;url=index.php" );
-            echo 'Ваш\ лот успешно опубликован. Вы будете перенаправлены на главную страницу через 5 секунд. Если нет, нажмите <a href="index.php">сюда</a>.';
+            header( "refresh:3;url=index.php" );
+            echo 'Ваш лот успешно опубликован. Вы будете перенаправлены на главную страницу через 3 секунды. Если нет, нажмите <a href="index.php">сюда</a>.';
 
             $_SESSION['status'] = 'Uploaded';
         }
