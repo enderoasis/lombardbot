@@ -5,7 +5,7 @@ use PDO;
     $db = new PDO('mysql:host=srv-db-plesk01.ps.kz:3306;dbname=lombardb_telegrambot', $user, $pass);
 
     // Делаем выборку из таблицы лотов
-    $stmt = $db->query("SELECT `notes` FROM `conversation`")->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $db->query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
 
    
 
