@@ -19,6 +19,8 @@ if( !empty( $_FILES['image']['name'] ) ) {
       // Экранируем специальные символы в содержимом файла
       $image = $db->quote( $image );
       // Формируем запрос на добавление файла в базу данных
+      var_dump($image);
+      var_dump($tittle);
       $sql = "INSERT INTO goods (tittle, category, email, content ) VALUES (?,?,?,?,?)";
       $stmt= $db->prepare($sql);
       $stmt->execute([$tittle, $category, $email, $image, $description]);
