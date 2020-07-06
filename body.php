@@ -12,7 +12,7 @@ use PDO;
 ?>
 <section id="main-content">
 <section class="wrapper site-min-height">
-  <h3><i class="fa fa-angle-right"></i> Список лотов</h3>
+  
   <hr>
   <?php foreach($stmt as $row): ?>
  
