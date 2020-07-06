@@ -109,7 +109,7 @@
                       <input class=" form-control" id="tittle" name="name" minlength="2" type="text" required />
                     </div>
                   </div>
-                       <div class="form-group ">
+                       <div class="form-group " style="width: 288px; margin-left: 1px;">
                    <select class="form-control" name="category">
                   <option>Выберите категорию</option>
                   <option>Техника</option>
