@@ -16,7 +16,7 @@ use PDO;
   <hr>
   <?php foreach($stmt as $row): ?>
  
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+  
         <h2><strong><?php echo  $row['tittle']; ?></strong></h2><br />
         <i>Категория: <?php echo $row['category']; ?></i> / 
         <i>Дата публикации: <?php echo $row['date']; ?></i><br /><br />
@@ -25,7 +25,7 @@ use PDO;
          <a class="fancybox" href="<?=$row['location']  ?>">
           <center>  <img class="img-responsive"  src="<?=$row['location']  ?>"></a> </center>
         </p>
-    </div>
+    
  
 <?php endforeach; ?>
     <!-- col-lg-4 -->

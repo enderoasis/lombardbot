@@ -49,7 +49,7 @@
          
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="logout.php">Выход</a></li>
+          <li><a class="logout" href="#">Выход</a></li>
         </ul>
       </div>
     </header>
