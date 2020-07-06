@@ -29,9 +29,7 @@ use PDO;
  <hr>
  
 <?php endforeach; ?>
-    <!-- col-lg-4 -->
    
-  <!-- /row -->
 </section>
-<!-- /wrapper -->
+ 
 </section>
