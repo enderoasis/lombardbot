@@ -23,7 +23,7 @@ use PDO;
         <p><?php echo $row['description']; ?></p>
         <p style="text-align:right; text-decoration:underline;">
          <a class="fancybox" href="<?=$row['location']  ?>">
-          <center>  <img class="img-responsive"  src="<?=$row['location']  ?>"></a> </center>
+         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">   <center>  <img class="img-responsive"  src="<?=$row['location']  ?>"></a> </center></div>
         </p>
     
  
