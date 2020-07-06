@@ -123,6 +123,12 @@
                       <input class="form-control " id="email" type="email" name="email" required />
                     </div>
                   </div>
+                  <div class="form-group ">
+                    <label for="cemail" class="control-label col-lg-2">Email </label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="telephone" type="telephone" name="telephone" required />
+                    </div>
+                  </div>
                   <div class="form-group last">
                   <label class="control-label col-md-3">Загрузите фотографию лота</label>
                   <div class="col-md-9">
