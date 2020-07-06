@@ -128,7 +128,7 @@
                   <div class="col-md-9">
                     <div class="fileupload fileupload-new" data-provides="fileupload">
                       <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="https://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
+                        <img src="https://balluff-ua.com/wp-content/themes/balluff/img/noImg.jpg" alt="" />
                       </div>
                       <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                       <div>
