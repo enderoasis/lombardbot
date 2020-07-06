@@ -21,6 +21,7 @@ use PDO;
         <i>Категория: <?php echo $row['category']; ?></i> / 
         <i>Дата публикации: <?php echo $row['date']; ?></i><br /><br />
         <p><?php echo $row['description']; ?></p>
+        <br>
         <p style="text-align:right; text-decoration:underline;">
          <a class="fancybox" href="<?=$row['location']  ?>">
           <center>  <img class="img-responsive" style="height: 350px; width: auto;"  src="<?=$row['location']  ?>"></a> </center>
