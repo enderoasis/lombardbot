@@ -25,7 +25,7 @@ use PDO;
          <a class="fancybox" href="<?=$row['location']  ?>">
           <center>  <img class="img-responsive" style="height: 350px; width: auto;"  src="<?=$row['location']  ?>"></a> </center>
         </p>
- 
+ <hr>
  
 <?php endforeach; ?>
     <!-- col-lg-4 -->
