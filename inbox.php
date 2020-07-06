@@ -104,7 +104,7 @@
               <div class=" form">
                 <form class="cmxform form-horizontal style-form" enctype="multipart/form-data" id="commentForm" method="post" action="insertdata.php">
                   <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2">Название слота (обязательно)</label>
+                    <label for="cname" class="control-label col-lg-2">Название слота </label>
                     <div class="col-lg-10">
                       <input class=" form-control" id="tittle" name="name" minlength="2" type="text" required />
                     </div>
@@ -118,7 +118,7 @@
                   <option>Изделия</option>
                 </select></div>
                   <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-2">E-Mail (обязательно)</label>
+                    <label for="cemail" class="control-label col-lg-2">Email </label>
                     <div class="col-lg-10">
                       <input class="form-control " id="email" type="email" name="email" required />
                     </div>
