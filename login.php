@@ -35,7 +35,7 @@
       *********************************************************************************************************************************************************** -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="auth.php">
+      <form class="form-login" action="auth.php" method="post">
         <h2 class="form-login-heading">Вход в систему</h2>
         <div class="login-wrap">
           <input type="text" name="login" class="form-control" placeholder="User ID" autofocus>

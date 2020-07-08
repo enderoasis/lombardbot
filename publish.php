@@ -204,15 +204,7 @@ function mask(event) {
     <!-- /MAIN CONTENT -->
     <!--main content end-->
     <!--footer start-->
-    <footer class="site-footer">
-      <div class="text-center">
-       
-    
-        <a href="form_validation.html#" class="go-top">
-          <i class="fa fa-angle-up"></i>
-          </a>
-      </div>
-    </footer>
+  
     <!--footer end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
