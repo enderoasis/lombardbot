@@ -6,6 +6,9 @@ $login = $_POST['login'];
 
     $_SESSION['auth'] = $login;
     header("Location: /board.php");
+ } else {
+    header("Location: /board.php");
+
  }
 
 
