@@ -58,7 +58,7 @@
               </a>
           </li>
           <li>
-            <a href="inbox.php">
+            <a href="publish.php">
               <i class="fa fa-plus"></i>
               <span>Выложить слот </span>
               </a>

@@ -26,7 +26,72 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="lib/bootstrap-fileupload/bootstrap-fileupload.css" />
-
+<script> <script>
+13
+window.addEventListener("DOMContentLoaded", function() {
+14
+function setCursorPosition(pos, elem) {
+15
+    elem.focus();
+16
+    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+17
+    else if (elem.createTextRange) {
+18
+        var range = elem.createTextRange();
+19
+        range.collapse(true);
+20
+        range.moveEnd("character", pos);
+21
+        range.moveStart("character", pos);
+22
+        range.select()
+23
+    }
+24
+}
+25
+ 
+26
+function mask(event) {
+27
+    var matrix = "+7 (___) ___ ____",
+28
+        i = 0,
+29
+        def = matrix.replace(/\D/g, ""),
+30
+        val = this.value.replace(/\D/g, "");
+31
+    if (def.length >= val.length) val = def;
+32
+    this.value = matrix.replace(/./g, function(a) {
+33
+        return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+34
+    });
+35
+    if (event.type == "blur") {
+36
+        if (this.value.length == 2) this.value = ""
+37
+    } else setCursorPosition(this.value.length, this)
+38
+};
+39
+    var input = document.querySelector("#tel");
+40
+    input.addEventListener("input", mask, false);
+41
+    input.addEventListener("focus", mask, false);
+42
+    input.addEventListener("blur", mask, false);
+43
+});
+44
+  </script>
+</script>
   <!-- =======================================================
     Template Name: Dashio
     Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
@@ -66,7 +131,7 @@
         <ul class="sidebar-menu" id="nav-accordion">
         
           <li class="mt">
-            <a href="index.php">
+            <a href="board.php">
               <i class="fa fa-list"></i>
               <span>Список  лотов</span>
               </a>
@@ -124,9 +189,9 @@
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="cemail" class="control-label col-lg-2">Email </label>
+                    <label for="cemail" class="control-label col-lg-2">Номер телефона </label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="telephone" type="telephone" name="telephone" required />
+                    <input class="form-control" name="telephone" value="" id="tel" required >   
                     </div>
                   </div>
                   <div class="form-group last">
