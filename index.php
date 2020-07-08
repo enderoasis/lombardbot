@@ -113,7 +113,7 @@
                             </div>
                             <div class="col-sm-6 ml-auto bg-primary">
                                 <div class="card">
-                                                                       <img src="sc.png" style="height:730px;">
+                                                                       <img src="sc.png" style="height:770px;">
 
                                 </div>
                             </div>
