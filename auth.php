@@ -1,4 +1,5 @@
 <?php
+session_start();
 $login = $_POST['login'];
 
 
@@ -7,7 +8,6 @@ $login = $_POST['login'];
     $_SESSION['auth'] = $login;
     header("Location: /board.php");
  } else {
-    header("Location: /board.php");
 
  }
 
