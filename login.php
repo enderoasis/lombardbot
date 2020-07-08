@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
-  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <meta name="keyword" content="">
+  <title>Авторизация / Ломбард</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -35,31 +35,16 @@
       *********************************************************************************************************************************************************** -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="index.html">
-        <h2 class="form-login-heading">sign in now</h2>
+      <form class="form-login" action="auth.php">
+        <h2 class="form-login-heading">Вход в систему</h2>
         <div class="login-wrap">
           <input type="text" class="form-control" placeholder="User ID" autofocus>
           <br>
-          <input type="password" class="form-control" placeholder="Password">
-          <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
-            <span class="pull-right">
-            <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-            </span>
-            </label>
-          <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
-          <hr>
-          <div class="login-social-link centered">
-            <p>or you can sign in via your social network</p>
-            <button class="btn btn-facebook" type="submit"><i class="fa fa-facebook"></i> Facebook</button>
-            <button class="btn btn-twitter" type="submit"><i class="fa fa-twitter"></i> Twitter</button>
-          </div>
-          <div class="registration">
-            Don't have an account yet?<br/>
-            <a class="" href="#">
-              Create an account
-              </a>
-          </div>
+          <input type="password" class="form-control" placeholder="Password"> <hr>
+                   <button class="btn btn-theme btn-block" href="board.php" type="submit"><i class="fa fa-lock"></i> Войти</button>
+         
+         
+         
         </div>
         <!-- Modal -->
         <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
