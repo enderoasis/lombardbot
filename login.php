@@ -41,7 +41,7 @@
           <input type="text" name="login" class="form-control" placeholder="User ID" autofocus>
           <br>
           <input type="password" class="form-control" placeholder="Password"> <hr>
-                   <button class="btn btn-theme btn-block" href="board.php" type="submit"><i class="fa fa-lock"></i> Войти</button>
+                   <button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> Войти</button>
          
          
          
