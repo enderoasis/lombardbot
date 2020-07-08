@@ -160,28 +160,28 @@
                         </div>
                         <div class="row mt-5">
                             <div class="col-md-6 mb-5">
-                                <h6>Can I try Snap for free?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <h6>Ваши услуги бесплатные?</h6>
+                                <p class="text-muted">Да, вам нет необходимости нам платить.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>Do you have hidden fees?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <h6>Безопасно ли оставлять свои данные?</h6>
+                                <p class="text-muted">Мы передаем ваши данные лишь ломбардам, так же мы придерживаемся политики конфиденциальности.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>What are the payment methods you accept?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <h6>В течении какого времени, можно ждать предложения?</h6>
+                                <p class="text-muted">Так как наш сервис молодой, в течении дня. В будущем, мы сократим это время до двух или трех часов.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>How often do you release updates?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <h6>Как работает ваша система?</h6>
+                                <p class="text-muted">Мы передаем ваш лот, ожидаем оценку от ломбардов и передаем вам самое выгодные предложение по цене.Всё прозрачно.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>What is your refund policy?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <h6>Я владелец ломбарда, могу ли я рассчитывать на сотрудничество?</h6>
+                                <p class="text-muted">Да, конечно. Мы открыты к партнерству с новыми людьми.</p>
                             </div>
                             <div class="col-md-6 mb-5">
-                                <h6>How can I contact you?</h6>
-                                <p class="text-muted">Nam liber tempor cum soluta nobis eleifend option congue nihil imper per tem por legere me doming.</p>
+                                <h6>Есть ли ограничения по цене или количеству лотов которые я выложу?</h6>
+                                <p class="text-muted">Нет никаких ограничении,мы принимаем лоты из разных категории. Будь то золото или норковая шуба,вы всегда можете это разместить.</p>
                             </div>
                         </div>
                     </div>
@@ -214,9 +214,8 @@
                     </div>
                     <div class="col-md-3 text-center text-md-right mb-0">
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#">Privacy</a></li>
-                            <li class="list-inline-item"><a href="#">Terms</a></li>
-                            <li class="list-inline-item"><a href="#">Affiliates</a></li>
+                            <li class="list-inline-item"><a href="#">Публичная оферта</a></li>
+                            <li class="list-inline-item"><a href="#">Политика конфиденциальности</a></li>
                         </ul>
                     </div>
                 </div>
