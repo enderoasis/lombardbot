@@ -105,7 +105,7 @@ function mask(event) {
         
         
           <li>
-            <a href="inbox.html">
+            <a href="publish.php">
               <i class="fa fa-plus"></i>
               <span>Выложить слот </span>
               </a>
