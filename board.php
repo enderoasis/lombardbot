@@ -4,8 +4,10 @@ session_start();
  if ($_SESSION['auth'] == 'admin') {
 
  
-header("Location: /login.php");
 
+
+ }else {
+    header("Location: /login.php");
  }
 
 ?>
