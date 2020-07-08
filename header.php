@@ -35,7 +35,6 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="board.php" class="logo"><b>Pawn<span>.Kz</span></b></a>
       <!--logo end-->
      
          
