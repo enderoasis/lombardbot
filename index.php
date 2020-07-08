@@ -5,7 +5,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title></title>
-        <meta name="description" content="Snap is a beautiful Bootstrap 4 template for multipurpose landing pages." /> 
+        <meta name="description" content="Pawn.kz - Самые выгодные
+        предложения от ломбардов не выходя из дома." /> 
 
         <!--Inter UI font-->
         <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
