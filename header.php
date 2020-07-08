@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="keyword" content="">
-  <title>Lomardbot</title>
+  <title>Pawn.kz</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
