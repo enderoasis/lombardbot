@@ -12,7 +12,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Публикация лота">
-  <title>Lombardbot</title>
+  <title>Pawn.kz</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
