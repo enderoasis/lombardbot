@@ -126,10 +126,10 @@
         <!--help section-->
         <section class=" mt-7" id="contact">
             <div class="container">
-                <div class="row">
+            <div class="row">
                     <div class="col-md-10 mx-auto">
-                        <h2 class="dot-circle">Need help?</h2>
-                        <p class="text-muted lead">We'd love to answer your questions.</p>
+                        <h2 class="dot-circle">Нужна помощь?</h2>
+                        <p class="text-muted lead">Мы с радостью поможем и ответим на вопросы.</p>
                         <div class="row mt-5 card-contacts">
                             <div class="col-md-6 mb-3">
                                 <div class="card">
@@ -139,8 +139,8 @@
                                                 <span data-feather="inbox" width="30" height="30"></span>
                                             </div>
                                         </div>
-                                        <h5>Send us an email</h5>
-                                        <p class="text-muted small-xl">We usually reply within 24 hours.</p>
+                                        <h5>Напишите на почту</h5>
+                                        <p class="text-muted small-xl">Отвечаем в течении дня.</p>
                                     </div>
                                 </div>
                             </div>
@@ -152,8 +152,8 @@
                                                 <span data-feather="message-circle" width="30" height="30"></span>
                                             </div>
                                         </div>
-                                        <h5>Chat with us</h5>
-                                        <p class="text-muted small-xl">The fastest way to contact us.</p>
+                                        <h5>Чат с нами</h5>
+                                        <p class="text-muted small-xl">Быстрая связь с нами.</p>
                                     </div>
                                 </div>
                             </div>
