@@ -49,7 +49,7 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 
 //Set the encryption mechanism to use - STARTTLS or SMTPS
-
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 
@@ -73,7 +73,7 @@ $mail->Subject = 'Новый лот на сайте';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$body = '<p><strong>На сайте опубликована новая заявка</strong></p>';
+$body = '<p><strong>Новый лот на сайте</strong></p>';
 $mail->msgHTML($body);
 //Replace the plain text body with one created manually
 $mail->AltBody = 'На сайте опубликована новая заявка';
