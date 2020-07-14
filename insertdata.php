@@ -1,8 +1,5 @@
 <?php
-include_once(FCPATH.'PHPMailer/src/PHPMailer.php');
-include_once(FCPATH.'PHPMailer/src/SMTP.php');
-include_once(FCPATH.'PHPMailer/src/Exception.php');
-
+require_once '/PHPMailer/PHPMailerAutoload.php';
 
 
 $tittle = $_POST['name'];
