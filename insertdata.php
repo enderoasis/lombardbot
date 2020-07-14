@@ -44,7 +44,7 @@ $mail->Host = 'smtp.gmail.com';
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
- $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  
+ $mail->SMTPSecure = PHPMailer::$ENCRYPTION_STARTTLS;  
 //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
 $mail->Port = 587;
 
