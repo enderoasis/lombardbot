@@ -37,7 +37,7 @@ $mail->isSMTP();
 // SMTP::DEBUG_OFF = off (for production use)
 // SMTP::DEBUG_CLIENT = client messages
 // SMTP::DEBUG_SERVER = client and server messages
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+$mail->SMTPDebug = 0;
 
 //Set the hostname of the mail server
 $mail->Host = 'smtp.gmail.com';
@@ -49,7 +49,6 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 
 //Set the encryption mechanism to use - STARTTLS or SMTPS
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
