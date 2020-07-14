@@ -1,7 +1,9 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+include 'PHPMailer\class.phpmailer.php';
+include 'PHPMailer\class.smtp.php';
 
+use PHPMailer;
+use SMTP;
 
 
 
