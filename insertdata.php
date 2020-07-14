@@ -23,6 +23,18 @@ if(ISSET($_POST['upload'])){
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "INSERT INTO `goods`(tittle, category, email, description, image_name, location)  VALUES ('$tittle','$category','$email', '$description','$file_name', '$path')";
                 $db->exec($sql);
+
+ $mail = new Mail;
+$mail->from('pawn@lombardbot.kz', 'Pawn.kz');
+$mail->to('enderoasis@gmail.com', 'Дидар');
+$mail->subject = 'Рассылка c сайта';
+ 
+// Добавление  файлов к письму.
+$mail->addFile(__DIR__ . '. $path .');
+ 
+$mail->body = '<h1>Здравствуйте!</h1>...';
+$mail->send();
+
             }catch(PDOException $e){
                 echo $e->getMessage();
             }
