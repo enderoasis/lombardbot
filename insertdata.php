@@ -1,9 +1,7 @@
 <?php
-include 'PHPMailer\class.phpmailer.php';
-include 'PHPMailer\class.smtp.php';
-
-use PHPMailer;
-use SMTP;
+include_once(FCPATH.'PHPMailer/src/PHPMailer.php');
+include_once(FCPATH.'PHPMailer/src/SMTP.php');
+include_once(FCPATH.'PHPMailer/src/Exception.php');
 
 
 
